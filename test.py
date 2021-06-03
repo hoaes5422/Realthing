@@ -25,3 +25,11 @@ name = "Hubert Blaine Wolfeschlegelsteinhausenbergerdorff"
 
 for y in name:
 	print(y)
+
+
+def square(x):
+	return x*x
+	
+
+for n in range(10):
+	print(f"the square of {n} is {square(n)}")
