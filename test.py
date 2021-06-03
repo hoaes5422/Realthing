@@ -7,4 +7,4 @@ name.add(4)
 name.add(3)
 print(name)
 
-print(f("the name have {len(name)} elements"))
+print(f"the name have {len(name)} elements")
