@@ -11,20 +11,6 @@ class question:
 		self.answer = answer
 
 
-# hayda = open("Data.txt", "w")
-
-# tips = {"anh" : "Anh xin lỗi"}
-# x = 0 
-# while x <= 100:
-# 	print(tips["anh"])
-# 	hayda.write("anh xin loi ")
-# 	x +=1 
-
-
-
-
-hayda.close()
-
 
 
 
