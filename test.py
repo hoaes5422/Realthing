@@ -54,31 +54,77 @@
 
 
 
-class Flight:
+# class Flight:
 
-	def __init__(self, blank):
-		self.blank	= blank
-		self.passengers_list = []
+# 	def __init__(self, blank):
+# 		self.blank	= blank
+# 		self.passengers_list = []
 
 		
-	def add_passengers(self,name):
-		if not self.seat() :
-			return False
-		self.passengers_list.append(name)
-		return True
+# 	def add_passengers(self,name):
+# 		if not self.seat() :
+# 			return False
+# 		self.passengers_list.append(name)
+# 		return True
 	
-	def seat(self):
-		return self.blank - len(self.passengers_list)
+# 	def seat(self):
+# 		return self.blank - len(self.passengers_list)
 
 
-flight = Flight(3)
+# flight = Flight(3)
 
-people = ["harry","nani","bop","emerland"]
+# people = ["harry","nani","bop","emerland"]
 
-for person in people: 
-	if flight.add_passengers(person):
-		print(f"add {person} into the flight successfully.")
-	else:
-		print(f"not enough space for {name}")
+# for person in people: 
+# 	if flight.add_passengers(person):
+# 		print(f"add {person} into the flight successfully.")
+# 	else:
+# 		print(f"not enough space for {name}")
 
+
+
+# def annouce(f):
+# 	def wrapper():
+# 		print("About to run the fuction...")
+# 		f()
+# 		print("done with the fuction.")
+# 	return wrapper
+# @annouce
+# def hello():
+# 	print("HELLO WORLD WE ARE HERE")
+
+# hello()
+
+
+# people = [ 
+# 	{"Bye":"Draco","names":"sort of thing "},
+# 	{"hello":"layla","names":"thing of thing"},
+# 	{"nothing":"nope","names":"thing and things"}
+# ]
+
+# try:
+# 	people.sort(key= lambda person: person["names"])
+# except:
+# 	print("this is not a right thing to do")
+
+# print(people)
+
+
+# keyworld = "haiya"
+# player = input("""please guess the world Uncle Roger always say in his video, you have 3 chance
+# 	 type here : """)
+# limit = 2
+# guest = 0
+# false = True
+# while player != keyworld and (false):	
+# 	if guest < limit:
+# 		player = input("please try again: ")
+# 		guest += 1
+# 	else:
+# 		false  = False 
+    
+# if false == False:
+# 	print("you lose")
+# else:
+# 	print("you win")
 
