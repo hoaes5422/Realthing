@@ -1,3 +1,15 @@
 from django.shortcuts import render
-from django.com import HttpResponse
-# Create your views here.
+
+
+tasks = ["Check the homework",
+"Write down the idea ",
+"End the thing you start"]
+
+def list(request):
+	return render(request,"list.html",{
+
+		"tasks": tasks
+		})
+
+def add(request):
+	return render(request,"add.html")
