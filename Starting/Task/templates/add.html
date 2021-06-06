@@ -1,15 +1,12 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet"  href="/static/list.css"></link>
-	<title>Tasks</title>
-</head>
-<body>
-	<h1>add task</h1>
-	<form>
-		<input type="text" name="addtasks">
+{% extends "combined.html" %}
+
+
+{% block combined %}
+	<h1>Add task</h1>
+	<form action="{% url 'tasks:add' %}" method="post">
+		{% csrf_token %}
+		{{ form }}
 		<button>Submit</button>
 	</form>
-</body>
-</html>
+	<a id="yeye" href="{% url 'tasks:list' %}">comback to list</a>
+{% endblock %}
