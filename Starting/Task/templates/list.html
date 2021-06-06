@@ -1,17 +1,13 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet"  href="/static/list.css"></link>
-	<title>Tasks</title>
-</head>
-<body>
+{% extends "combined.html" %}
+
+{% block combined %}
+	<h1 >Task</h1>
 	<ul>
 		{% for task in tasks %}
 		<li>{{task}}</li>
+		{% empty %}
+		<li>No task.</li>
 		{% endfor %}
-
-
 	</ul>
-</body>
-</html>
+	<a href="{% url 'tasks:add' %}">Add tasks</a>
+{% endblock %}
