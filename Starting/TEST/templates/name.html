@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Name</title>
+	<style>
+		h1 {
+			font-family: Roboto mono,Arial;
+			font-size: 30px;
+			color: blueviolet;
+		}
+		div p {	
+			font-family: Roboto mono,Arial;
+			font-size: 25px;
+			color: darkmagenta;
+
+
+
+			}
+
+		body {
+			background-color: lightsteelblue;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Your name is: </h1>
+	{% for name in names %}
+	<div><p>{{name}}</p></div>
+	{% empty %}
+	<div><p>No name.</p></div>
+	{% endfor %}
+</body>
+</html>
