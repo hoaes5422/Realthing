@@ -1,9 +1,10 @@
 
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>test </title>
-	<link rel="stylesheet" href="h3.css">
+	<link rel="stylesheet" href="/static/h3.css"></link>
 </head>
 <body>
 	<ol>
@@ -47,11 +48,12 @@
 		<p>This is a test question</p>
 	</div>
 
-	<form>
-		<input type="text" placeholder="Type your name"name="">
-		<input type="password" placeholder="Passcode">
-		<button id="num2">Submit</button>
+	<form action="{% url 'names:index' %}" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<button>Submit</button>
 	</form>
+	<p>Type Delete if you want to delete all previous name</p>
 
 </body>
 </html>
