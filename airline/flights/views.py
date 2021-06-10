@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from .models import Flight
 def index(request):
-	return	render(request,"flights.html",{
-		"flights": Flight.objects.all()
+	return render(request,"flights.html",{
+		"flights": Flight.objects.all(),
 		})
 
 
@@ -10,5 +10,6 @@ def index(request):
 def flight(request,flight_id):
 	flight = Flight.objects.get(pk=flight_id)
 	return render(request,"flightflight.html",{
-		"flight": flight
+		"flight": flight,
+		"Passenger": flight.passenger.all()
 		})
