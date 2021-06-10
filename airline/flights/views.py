@@ -1,3 +1,14 @@
 from django.shortcuts import render
+from .models import Flight
+def index(request):
+	return	render(request,"flights.html",{
+		"flights": Flight.objects.all()
+		})
 
-# Create your views here.
+
+
+def flight(request,flight_id):
+	flight = Flight.objects.get(pk=flight_id)
+	return render(request,"flightflight.html",{
+		"flight": flight
+		})
