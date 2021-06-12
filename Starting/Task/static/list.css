@@ -1,13 +1,13 @@
 ul li {
 	font-size: 20px;
 	font-family: Roboto mono, Arial;
-	color: darkmagenta;
+	color: darkred;
 }
 
 h1 {
 	font-size: 40px;
 	font-family: Roboto mono, Arial;
-	color: blueviolet;
+	color: darkred;
 }
 
 label  {
@@ -20,6 +20,6 @@ button {
 #yeye {
 	font-size: 25px;
 	font-family: Roboto mono, Arial;
-	color: blueviolet;
+	color: darkred;
 }
 }
