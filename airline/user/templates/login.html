@@ -1,0 +1,17 @@
+{% extends 'combined.html' %}
+
+
+{% block body %}
+
+
+<form action="{% url 'login' %}" method="post ">
+	{% scrf_token %}
+	<input type="text" name="username" placeholder="Username">
+	<input type="passworld" name="passworld", placeholder="Passcode">
+	<input type="submit" value="Login">
+
+</form>
+
+
+
+{% endblock %}          
