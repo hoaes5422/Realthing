@@ -1,6 +1,6 @@
 h1 {
 	font-family: Roboto mono, sans-serif;
-	color: darkmagenta;,
+	color: blueviolet;,
 }
 
 ul li {
@@ -9,3 +9,15 @@ ul li {
 	font-size: 20px;
 }
 
+#warning {
+	border: 3px solid darkred;
+	padding: 10px;
+	background-color: red;
+
+
+}
+
+
+body {
+	background-color: orange;
+}
