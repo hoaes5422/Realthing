@@ -1,0 +1,28 @@
+ul li {
+	font-size: 20px;
+	font-family: Roboto mono, Arial;
+	color: blueviolet;
+}
+
+h1 {
+	font-size: 20px;
+	font-family: Roboto mono, Arial;
+	color: blueviolet;
+}
+
+label  {
+	font-size: 30px;
+}
+button {
+	font-size: 13px;
+}
+
+#yeye {
+	font-size: 25px;
+	font-family: Roboto mono, Arial;
+	color: blueviolet ;
+}
+
+h2 {
+	color: darkgoldenrod;
+}
