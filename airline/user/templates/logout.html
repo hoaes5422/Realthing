@@ -3,9 +3,16 @@
 
 {% block body %}
 
+{% if message %}
+<div> {{ message }}</div>
+{% endif %}
 
-
-
+<form action="{% url 'login' %}" method="post">
+	{% csrf_token %}
+	<input type="text" name="username" placeholder="Username">
+	<input type="password" name="password", placeholder="Passcode">
+	<input type="submit" value="Login">
+</form>
 
 
 {% endblock %}
