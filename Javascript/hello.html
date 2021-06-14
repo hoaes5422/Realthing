@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="hello.js"></script>
 	<title>Hello</title>
 	<link rel="stylesheet" type="text/css" href="hello.css">
-	<script src="hello.js"></script>
 </head>
+
 <body>
 	<h1 class="ha">Hello!</h1>
-	<button onclick="hello()"> Alert</button>
+	<button id="hello"> Alert</button>
 	<div>
-		<button onclick="Change()">Heading</button>
+		<button id="heading">Heading</button>
 	</div>
 	<h1 class="ha">Conter</h1>
 	<div>
 		Number<p>0</p>
 	</div>
-	<button onclick="count()">Count</button>
+	<button id="count">Count</button>
 
+	<h1 class="ha">Interact</h1>
+	<form>
+		<input type="text" autofocus id="name" placeholder="Name">
+		<input type="submit" name="">
+	</form>
+	<h1 class="ha">Change the color of the heading</h1>
+	<select>
+		<option value="black">Black</option>
+		<option value="green">Green</option>
+		<option value="red">Red</option>
+		<option value="brown">Brown</option>
+	 </select>
+
+	<div><h1 class="ha">Task</h1>
+	<ul id="tasksss">
+		<li>This is the space for the task </li>
+	</ul>
+	<form>
+		<input type="text" id="task" placeholder="Task">
+		<input type="submit" name="submit" id="submit" >
+	</form></div>
 </body>
 </html>
