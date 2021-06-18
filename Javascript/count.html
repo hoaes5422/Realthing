@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Count</title>
+	<script>
+
+if (!localStorage.getItem('counter')) {
+
+    
+    localStorage.setItem('counter', 0);
+}
+            
+function count() {
+    
+    let counter = localStorage.getItem('counter');
+
+ 
+    counter++;
+    document.querySelector('p').innerHTML = counter;
+
+    
+    localStorage.setItem('counter', counter);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    document.querySelector('p').innerHTML = localStorage.getItem('counter');
+    document.querySelector('button').onclick = count;
+});
+	</script>
+</head>
+<body>
+<h1>Counter</h1>
+	<div>
+		Number<p>0</p>
+	</div>
+	<button id="count">Count</button>
+</body>
+</html>
