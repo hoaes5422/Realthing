@@ -1,6 +1,4 @@
-if (!local.Storage.getItem('counter')) {
-	local.Storage.setItem('counter', 0)
-}
+
 document.addEventListener('DOMContentLoaded', function() {
 	document.querySelector('select').onchange = function () {
 		document.querySelector('h1').style.color = this.value;
@@ -16,21 +14,20 @@ document.addEventListener('DOMContentLoaded',function() {
 })
 // for the hello function
 
-let counter = local.Storage.getItem('counter')
-function count() {
-	counter +=1;
-	document.querySelector('p').innerHTML = counter;
-	local.Storage.setItem('counter', counter);	
-	if (counter % 10 === 0) {
-		alert(`Count is now ${counter}`);
-	}
-	}
-// this if for the count function
-document.addEventListener('DOMContentLoaded',function() {
-	document.querySelector('#count').onclick = count;
-	// setInterval(count,1000);
 
-})
+if (!localStorage.getItem('counter')) { 
+    localStorage.setItem('counter', 0);}
+            
+function count() {  
+    let counter = localStorage.getItem('counter');
+    counter++;
+    document.querySelector('p').innerHTML = counter;
+    localStorage.setItem('counter', counter);}
+
+document.addEventListener('DOMContentLoaded', function() {  
+    document.querySelector('p').innerHTML = localStorage.getItem('counter');
+    document.querySelector('#count').onclick = count;
+});
 
 function Change() {
 	const heading = document.querySelector('h1');
@@ -89,6 +86,28 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	document.querySelector('#h5f1').onsubmit = function() {
+		fetch('http://api.exchangeratesapi.io/v1/latest?access_key=112544a7f6ef07e90323fe92cc19b4b9&USD')
+		.then(response => response.json())
+		.then(data => {
+		const currency = document.querySelector('#currency').value.toUpperCase();
+		const rate = data.rates[currency];
+		if (rate !== undefined) {
+			const result = `1 USD is equal to ${rate.toFixed(3)} ${currency}`;
+		document.querySelector('#result').innerHTML = result;
+		} else {
+		document.querySelector('#result').innerHTML = 'Invalid currency.';
+				}
+			})
+			.catch(error => {
+		console.log('Error:', error);
+			});
+			return false;
+			}
+			});
 
 
 
