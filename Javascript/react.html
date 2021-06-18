@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      
+      div {
+        color: blueviolet;
+        font-family: Roboto mono; 
+        font-size: 20px;
+      }
+
+      #Score {
+        text-align: center;
+        font-family: sans-serif;
+      }
+      #Problem {
+        font-size: 70px;
+
+      }
+      .problem_self {
+        font-size: 55px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="hay"></div>
+    <div id="Count"></div>
+    <div id="Score"></div>
+    <script type="text/babel">
+    class Hello extends React.Component {
+      render() {
+        return (
+        <h1>Hello, {this.props.name}!</h1>
+        );
+      }
+    }
+
+    class App extends React.Component {
+      render() { 
+        return (
+          <div>
+           <Hello name="Harry" />
+           <Hello name="nani" />
+           <Hello name="hay" />
+          </div>
+          );
+        }
+      }
+      ReactDOM.render(<App />, document.querySelector("#hay"));
+
+      class Count extends React.Component {
+
+
+      constructor(props) {
+        super(props);
+          this.state = {
+            count: 0
+        };
+      }
+        render() {
+          return (
+          <div>
+          <h1>{this.state.count}</h1>
+          <button onClick={this.count}>Count</button>
+          </div>
+          );
+        }
+      count = () => {
+        this.setState(state => ({
+          count: state.count + 1
+        }))
+      }
+      }
+      ReactDOM.render(<Count />, document.querySelector("#Count"));
+      
+
+
+      class Score extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          num1: 1,
+          num2: 2,
+          response: "",
+          score: 0 
+        };
+      }
+      render() {
+        if (this.state.score === 10) {
+          return(
+          alert('You win this game')
+          );
+        }
+        return (
+        <div>
+          <p id="Problem">{this.state.num1} + {this.state.num2}</p>
+          <input id="problem_self" onKeyPress={this.keyword} onChange={this.updateResponse} value={this.state.response} />
+          <p class="problem_self">Score: {this.state.score}</p>
+
+        </div>
+        );
+      }
+        updateResponse = (event) => {
+          this.setState({
+            response: event.target.value
+          });
+        }
+
+
+        keyword = (event) => {
+          if (event.key === "Enter") {
+              const answer = parseInt(this.state.response);
+              if (answer === this.state.num1 + this.state.num2) {
+                this.setState(state => ({
+                  score: state.score +1,
+                  num1: Math.ceil(Math.random() * 10),
+                  num2: Math.ceil(Math.random() * 10),
+                  response: ""
+                }));
+              } else {
+                this.setState(state => ({
+                  score: state.score -1,
+                  response: ""
+              }));
+          }
+        }}
+      }
+
+
+      
+      ReactDOM.render(<Score />, document.querySelector("#Score"))
+    </script>
+  </body>
+  </html>
